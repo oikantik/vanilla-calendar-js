@@ -2,6 +2,8 @@
 
 .calendar {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .days {
@@ -24,6 +26,21 @@
         align-items: center;
         height: 50px;
         width: 50px; 
+        &--selected {
+            background-color: salmon;
+            color: #ffffff;
+        }
     }
+
+    
 }
 
+.app {
+    &__headline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

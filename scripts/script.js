@@ -113,12 +113,21 @@ const months = [
 
 
 const addMonthsToDom = (currValue, maxNum, currDay) => {
+  const currentDate = new Date().getDate();
   let staticCurrValue = currValue;
   console.log('curday >>', currDay)
   while (staticCurrValue <= maxNum) {
-    document.querySelector(`#${currDay}`).innerHTML += `
+
+    if (staticCurrValue === currentDate) {
+      document.querySelector(`#${currDay}`).innerHTML += `
+  <li class="days__day days__day--selected">${staticCurrValue}</li>
+  `;
+    } else {
+      document.querySelector(`#${currDay}`).innerHTML += `
   <li class="days__day">${staticCurrValue}</li>
   `;
+    }
+    
     staticCurrValue = staticCurrValue + 7;
   }
 
@@ -148,6 +157,9 @@ const renderAllWeekdaysToDom = () => {
   const firstDateOfMonth = new Date(
     `${currentMonth + 1}/1/${currentYear}`
   ).getDay();
+  const currentMonthName = months.find(month => {
+    return month.id === currentMonth;
+  })
   const firstDayOfCurrentMonth = weekDays.find(
     (weekDay) => weekDay.id === firstDateOfMonth
   ).fullName; // gives me the current day but what do I do with it?
@@ -163,6 +175,8 @@ const renderAllWeekdaysToDom = () => {
     console.log(day)
     addMonthsToDom(index + 1, maxDays.days, day.fullName)
   })
+
+  document.querySelector('.app__headline').innerText = currentMonthName.name;
 }
 
 renderAllWeekdaysToDom();

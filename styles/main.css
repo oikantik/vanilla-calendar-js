@@ -64,6 +64,12 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .days {
@@ -106,5 +112,23 @@ table {
           align-items: center;
   height: 50px;
   width: 50px;
+}
+.days__day--selected {
+  background-color: salmon;
+  color: #ffffff;
+}
+
+.app__headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=main.css.map */
