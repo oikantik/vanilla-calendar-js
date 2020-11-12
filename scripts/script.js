@@ -154,6 +154,8 @@ const addMonthsToDom = (currValue, maxNum, currDay) => {
 const renderAllWeekdaysToDom = () => {
   const currentMonth = date.getMonth(); // to get current month as current month starts from 0;
   const currentYear = date.getFullYear();
+  const currentDate = date.getDate();
+  const todaysDay = date.getDay();
   const firstDateOfMonth = new Date(
     `${currentMonth + 1}/1/${currentYear}`
   ).getDay();
@@ -176,7 +178,9 @@ const renderAllWeekdaysToDom = () => {
     addMonthsToDom(index + 1, maxDays.days, day.fullName)
   })
 
-  document.querySelector('.app__headline').innerText = currentMonthName.name;
+  document.querySelector('.calendar__headline').innerText = currentMonthName.name + " " + currentYear;
+  document.querySelector('.calendar__day-name').innerText = weekDays.find(day => day.id === todaysDay).fullName;
+  document.querySelector('.calendar__day-num').innerText = currentDate;
 }
 
 renderAllWeekdaysToDom();

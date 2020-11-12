@@ -1,13 +1,66 @@
 @use './partials/reset-components';
 
+
+
 .calendar {
+    border: none;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    margin: 1rem auto;
     align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 1px 20px 12px #eaeaea;
+
+    &__main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    &__headline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    &__highlight {
+        display: flex;
+        padding:2rem;
+        background: rgb(0,0,0);
+        background: linear-gradient(45deg, #c900ff, #d03c1b);
+        width: 300px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    &__day-name {
+        font-size: 1rem;
+        color: #ffffff;
+        text-transform: capitalize;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    &__day-num {
+        font-size: 6rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
 }
 
+
+
 .days {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -16,31 +69,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
+        font-weight: bold;
+        font-size: .875rem;
     }
 
     &__day {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50px;
-        width: 50px; 
+        height: 40px;
+        width: 40px;
+        font-size: .875rem;
+
         &--selected {
-            background-color: salmon;
+            background: linear-gradient(45deg, #ca0cd2, #cf372f);
             color: #ffffff;
         }
     }
 
-    
-}
 
-.app {
-    &__headline {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
 }

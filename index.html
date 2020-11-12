@@ -11,8 +11,13 @@
 
 <body>
     <main class="app">
-        <h1 class="app__headline"></h1>
         <div class="calendar">
+        <div class="calendar__highlight">
+            <span class="calendar__day-name"></span>
+            <span class="calendar__day-num"></span>
+        </div>
+        <h1 class="calendar__headline"></h1>
+        <div class="calendar__main">
             <ul class="days" id="sunday">
                 <li class="days__name">Sun</li>
             </ul>
@@ -42,7 +47,7 @@
             <ul class="days" id="saturday">
                 <li class="days__name">Sat</li>
             </ul>
-        </div>
+        </div></div>
     </main>
     <script src="./scripts/script.js"></script>
 </body>
