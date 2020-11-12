@@ -1,2 +1,29 @@
 @use './partials/reset-components';
 
+.calendar {
+    display: flex;
+}
+
+.days {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+    }
+
+    &__day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px; 
+    }
+}
+
